@@ -1,0 +1,325 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* -- end reset -- */
+
+/*
+ * COLOR_YELLOW = fff200
+ * COLOR_DARK_MUTED_BLUE = 213b44
+ * COLOR_DARK_BLUE = 212d43
+ * COLOR_LIGHT_BLUE = 48b6e8
+ * COLOR_BLUE = 348cc2
+ * COLOR_RED = f15757
+ *
+ */
+
+@font-face {
+  font-family: "Circular";
+  src: url("/fonts/CircularStd-Book.otf");
+  font-weight: 300; }
+@font-face {
+  font-family: "Circular";
+  src: url("/fonts/CircularStd-Medium.otf");
+  font-weight: 600; }
+@font-face {
+  font-family: "Circular";
+  src: url("/fonts/CircularStd-Bold.otf");
+  font-weight: 700; }
+@font-face {
+  font-family: "Circular";
+  src: url("/fonts/CircularStd-Black.otf");
+  font-weight: 900; }
+
+body {
+  background: #111;
+  font-family: Circular, Helvetica, Arial, "Microsoft Yahei", "微软雅黑", 黑体, SimHei, "华文黑体", STHeiti, STXihei, "华文细黑", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  background-color: #111 !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.mapbox-logo {
+  display: none;
+}
+
+button:focus { outline: none; }
+
+#current-location-btn, #music-btn {
+  background: #348cc2;
+  color: #fff;
+  display: block;
+  font-size: 1.5em;
+  position: fixed;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  z-index: 100;
+  text-align: center;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+          box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+#current-location-btn img, #music-btn img {
+  max-width: 100%;
+}
+
+#current-location-btn:hover, #music-btn:hover {
+  background: #48b6e8;
+  cursor: pointer;
+}
+
+#current-location-btn {
+  right: 10px;
+}
+
+#music-btn {
+  right: 70px;
+}
+
+#music-btn img {
+  vertical-align: super;
+  max-height: 100%;
+}
+
+body, li, a, p, h1, h2, h3, h4, h5 {
+  line-height: 1.5em;
+  letter-spacing: 0.03em;
+}
+
+.hide {
+  display: none !important;
+}
+
+header {
+  position: absolute;
+  z-index: 3000;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+          box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+header > a {
+  color: #fff;;
+  display: inline-block;
+  float: left;
+  font-weight: 600;
+  height: 50px;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  width: 50%;
+}
+
+#logos {
+  position: absolute;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+}
+
+#logos img {
+  max-height: 30px;
+  margin: 0 0 10px 15px;
+}
+
+#venues, #routes {
+  position: absolute;
+  z-index: 2000;
+  top: 50px;
+  left: 0;
+  right: 0;
+}
+
+#venues, #venues-btn {
+  background: #48b6e8;
+}
+
+#routes, #routes-btn {
+  background: #3288BE;
+}
+
+#venues li, #routes li {
+  text-align: center;
+}
+
+#venues li a, #routes li a {
+  color: #fff;
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  width: 100%;
+}
+
+#venues li a:hover {
+  background: #348cc2;
+}
+
+/* music */
+
+body#music {
+  background: #fff200;
+  color: #213b44;
+  height: 100%;
+  padding-bottom: 100px;
+}
+
+section {
+  max-width: 700px;
+  margin: 0 auto;
+  bottom: 0;
+  padding: 14px;
+  text-align: center;
+}
+
+h1, h2 {
+  padding: 12px;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+#map-btn {
+  position: absolute;
+  padding: 15px;
+  top: 0;
+  left: 0;
+  color: #213b44;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+.animated {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    visibility: hidden;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    visibility: hidden;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+
+.slideOutUp {
+  -webkit-animation-name: slideOutUp;
+  animation-name: slideOutUp;
+}
